@@ -1,0 +1,374 @@
+/* ========================================= */
+/* Student Contribution Website - Stylesheet */
+/* ========================================= */
+
+/* ========================================= */
+/* CSS Variables - Easy theme management */
+/* These allow us to easily change colors for dark mode */
+/* ========================================= */
+:root {
+    /* Light Mode Colors */
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --accent-color: #667eea;
+    --accent-hover: #5a67d8;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --border-color: #e2e8f0;
+    --card-border: #edf2f7;
+}
+
+/* ========================================= */
+/* Dark Mode Colors */
+/* Applied when body has class "dark-mode" */
+/* ========================================= */
+body.dark-mode {
+    --bg-primary: #1a202c;
+    --bg-secondary: #2d3748;
+    --bg-card: #2d3748;
+    --text-primary: #f7fafc;
+    --text-secondary: #a0aec0;
+    --accent-color: #7c3aed;
+    --accent-hover: #6d28d9;
+    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --border-color: #4a5568;
+    --card-border: #4a5568;
+}
+
+/* ========================================= */
+/* Base Styles - Reset and defaults */
+/* ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================= */
+/* Font Selection Rationale: */
+/* We use "Poppins" from Google Fonts */
+/* Why: It's a modern, geometric sans-serif */
+/* Benefits: Good readability, friendly appearance, */
+/* works well for both headings and body text */
+/* ========================================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for dark mode switching */
+}
+
+/* ========================================= */
+/* Container - Limits width for better readability */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================================= */
+/* HEADER STYLES */
+/* ========================================= */
+.header {
+    background-color: var(--bg-secondary);
+    padding: 20px 0;
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ========================================= */
+/* Dark Mode Button */
+/* Circular button with emoji icon */
+.dark-mode-btn {
+    background-color: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--accent-color);
+}
+
+/* ========================================= */
+/* Contributor Counter */
+/* Shows how many students have contributed */
+.contributor-counter {
+    background-color: var(--bg-primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.counter-number {
+    font-weight: 700;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* ========================================= */
+/* Hero Section */
+/* Large welcome message at top */
+.hero {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ========================================= */
+/* Cards Section */
+/* ========================================= */
+.cards-section {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* ========================================= */
+/* Cards Container */
+/* Uses CSS Grid for responsive layout */
+/* ========================================= */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* ========================================= */
+/* Student Card Styles */
+/* Each student's card has hover effects */
+.student-card {
+    background-color: var(--bg-card);
+    border: 2px solid var(--card-border);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+/* ========================================= */
+/* Hover Effects on Cards */
+/* When mouse hovers over card, it lifts up */
+.student-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--accent-color);
+}
+
+.student-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.student-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+/* ========================================= */
+/* GitHub Guide Section */
+/* ========================================= */
+.github-guide {
+    background-color: var(--bg-secondary);
+    padding: 60px 0;
+    transition: background-color 0.3s ease;
+}
+
+.guide-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+/* ========================================= */
+/* Steps Container */
+/* Grid layout for step cards */
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* ========================================= */
+/* Step Card Styles */
+/* Each GitHub step has its own card */
+.step-card {
+    background-color: var(--bg-card);
+    border: 2px solid var(--card-border);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.step-number {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.step-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.step-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ========================================= */
+/* Code Snippets */
+/* Inline code styling */
+code {
+    background-color: var(--bg-primary);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================================= */
+/* Footer */
+/* ========================================= */
+.footer {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 30px 0;
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease;
+}
+
+/* ========================================= */
+/* RESPONSIVE DESIGN */
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 0;
+    }
+
+    .site-title {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}

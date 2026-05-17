@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ========================================= -->
+<!-- Student Contribution Website -->
+<!-- Purpose: Students add their own cards to learn Git/GitHub -->
+<!-- ========================================= -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Contributions</title>
+
+    <!-- ========================================= -->
+    <!-- GOOGLE FONTS - Font Selection Rationale: -->
+    <!-- Poppins: Modern, clean, readable sans-serif -->
+    <!-- Improves readability and gives a friendly, -->
+    <!-- modern feel suitable for educational sites -->
+    <!-- ========================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Link to our CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ========================================= -->
+    <!-- HEADER SECTION -->
+    <!-- Contains title, dark mode toggle, and contributor counter -->
+    <!-- ========================================= -->
+    <header class="header">
+        <div class="container header-content">
+            <!-- Site Title -->
+            <h1 class="site-title">Student Contributions</h1>
+
+            <!-- Header Controls: Dark mode toggle and contributor counter -->
+            <div class="header-controls">
+                <!-- Dark Mode Toggle Button -->
+                <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle dark mode">
+                    <!-- Sun icon for switching to light mode -->
+                    <span class="icon">☀️</span>
+                </button>
+
+                <!-- Contributor Counter Display -->
+                <div class="contributor-counter">
+                    <span class="counter-label">Contributors:</span>
+                    <span id="contributorCount" class="counter-number">1</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================= -->
+    <!-- HERO SECTION -->
+    <!-- Brief introduction to the project -->
+    <!-- ========================================= -->
+    <section class="hero">
+        <div class="container">
+            <h2>Welcome to Our Student Project!</h2>
+            <p class="hero-text">
+                This is a collaborative project where students learn Git and GitHub
+                by contributing their own cards. Add your details below!
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- STUDENT CARDS SECTION -->
+    <!-- This is where ALL student contribution cards go -->
+    <!-- ========================================= -->
+    <main class="container">
+        <section class="cards-section">
+            <h2 class="section-title">Our Contributors</h2>
+
+            <!-- ========================================= -->
+            <!-- CARDS CONTAINER -->
+            <!-- Students: Add your cards INSIDE this div -->
+            <!-- Each card represents one student's contribution -->
+            <!-- ========================================= -->
+            <div class="cards-container" id="cardsContainer">
+
+                <!-- ========================================= -->
+                <!-- SAMPLE STUDENT CARD - COPY THIS! -->
+                <!-- Follow these steps to add your card: -->
+                <!-- 1. Copy everything from <div class="student-card"> to </div> -->
+                <!-- 2. Paste it below this card -->
+                <!-- 3. Replace "Your Name" with your actual name -->
+                <!-- 4. Replace "Your one-line sentence here." with your message -->
+                <!-- 5. Make sure to keep the class="student-card" part! -->
+                <!-- ========================================= -->
+
+                <div class="student-card">
+                    <h3>Your Name</h3>
+                    <p>Your one-line sentence here.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================= -->
+    <!-- GITHUB LEARNING SECTION -->
+    <!-- Step-by-step guide for beginners to learn Git -->
+    <!-- ========================================= -->
+    <section class="github-guide">
+        <div class="container">
+            <h2 class="section-title">Learn Git & GitHub</h2>
+            <p class="guide-intro">
+                Follow these simple steps to add your card to this project!
+            </p>
+
+            <!-- Step-by-step instructions -->
+            <div class="steps-container">
+
+                <!-- Step 1: Fork -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Fork the Repository</h3>
+                    <p>
+                        Go to the GitHub repository page and click the "Fork" button
+                        in the top-right corner. This creates your own copy of the project.
+                    </p>
+                </div>
+
+                <!-- Step 2: Clone -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Clone Your Fork</h3>
+                    <p>
+                        Open your terminal/command prompt and run:<br>
+                        <code>git clone [your-fork-url]</code><br>
+                        This downloads the project to your computer.
+                    </p>
+                </div>
+
+                <!-- Step 3: Add Card -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Add Your Card</h3>
+                    <p>
+                        Open <code>index.html</code> in a text editor.
+                        Copy the sample card template and paste it below the existing card.
+                        Change the name and sentence to yours!
+                    </p>
+                </div>
+
+                <!-- Step 4: Commit -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Commit Your Changes</h3>
+                    <p>
+                        Run these commands in your terminal:<br>
+                        <code>git add .</code><br>
+                        <code>git commit -m "Added my contribution"</code>
+                    </p>
+                </div>
+
+                <!-- Step 5: Push -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Push to GitHub</h3>
+                    <p>
+                        Upload your changes to your fork:<br>
+                        <code>git push origin main</code>
+                    </p>
+                </div>
+
+                <!-- Step 6: Pull Request -->
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Create a Pull Request</h3>
+                    <p>
+                        Go to your fork on GitHub, click "Contribute",
+                        then "Open Pull Request". Add a description and submit!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- Simple footer with credits -->
+    <!-- ========================================= -->
+    <footer class="footer">
+        <div class="container">
+            <p>Made with ❤️ for learning Git & GitHub</p>
+        </div>
+    </footer>
+
+    <!-- Link to our JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
